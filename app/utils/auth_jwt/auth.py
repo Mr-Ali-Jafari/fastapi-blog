@@ -30,10 +30,6 @@ def create_access_token(data: Dict[str, Any], expires_delta: Optional[timedelta]
     return encoded_jwt
 
 def decode_access_token(token: str) -> Optional[Dict[str, Any]]:
-    """
-    دیکد کردن JWT و بازگرداندن اطلاعات درون آن.
-    اگر JWT معتبر نباشد، None برمی‌گرداند.
-    """
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         return payload
